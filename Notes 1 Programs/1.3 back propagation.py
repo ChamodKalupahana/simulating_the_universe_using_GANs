@@ -42,3 +42,9 @@ class MLP(object):
     # Linear activation 
     a_2 = z_2
     return z_1, a_1, z_2, a_2
+
+m = MLP()
+m.weights_1 = np.array([[0, -1], [1,1], [1,1]], dtype=np.float)
+m.weights_2 = np.array([[0], [1], [-2]], dtype=np.float)
+z_1, a_1, z_2, a_2 = m.forward(X)
+print(0.25 * np.sum((a_2 - Y)**2))
